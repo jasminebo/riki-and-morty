@@ -25,16 +25,18 @@ const styles = (theme) => ({
   },
   infoContainer: {
     bottom: 60,
-    position: "absolute",
-    backgroundColor: "blue",
     width: "100%",
+    alignItems: "center",
+    justify: "center",
   },
   separator: {
     height: "0.01mm",
-    width: "95%",
+    width: "90%",
+    marginTop: 30,
   },
   text: {
     fontSize: 30,
+    textAlign: "center",
   },
 });
 
@@ -65,7 +67,8 @@ class RickiDetails extends Component {
     const { classes } = this.props;
     const { character } = this.state;
     if (character) {
-      const { name, image, species, status, location, origin } = character;
+      const { name, image, species, status, gender, location, origin } =
+        character;
       return (
         <Box>
           <Box className={classes.rickiContainer}>
@@ -80,38 +83,40 @@ class RickiDetails extends Component {
             <Box className={classes.infoContainer}>
               <hr className={classes.separator} />
               <Grid container>
-                <Grid item md={2}>
+                <Grid item md={4}>
                   <Typography className={classes.text}>
-                    Name
-                    <br />
+                    <h3>Name</h3>
                     {name}
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={4}>
                   <Typography className={classes.text}>
-                    Species
-                    <br />
+                    <h3>Species</h3>
                     {species}
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={4}>
                   <Typography className={classes.text}>
-                    Status
-                    <br />
+                    <h3>Status</h3>
                     {status}
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <hr className={classes.separator} />
+                <Grid item md={4}>
                   <Typography className={classes.text}>
-                    Location
-                    <br />
+                    <h3>Gender</h3>
+                    {gender}
+                  </Typography>
+                </Grid>
+                <Grid item md={4}>
+                  <Typography className={classes.text}>
+                    <h3>Location</h3>
                     {location.name}
                   </Typography>
                 </Grid>
-                <Grid item md={2}>
+                <Grid item md={4}>
                   <Typography className={classes.text}>
-                    Origin
-                    <br />
+                    <h3>Origin</h3>
                     {origin.name}
                   </Typography>
                 </Grid>

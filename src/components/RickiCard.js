@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles(({ theme }) => ({
   card: {
     cursor: "pointer",
-    backgroundColor: "black",
+    backgroundColor: "black", //need to ovverride
     color: "white",
     "&:hover": { backgroundColor: "rgb(225,225,225)" },
   },
@@ -20,7 +20,7 @@ const useStyles = makeStyles(({ theme }) => ({
   },
   link: {
     textDecoration: "none",
-  },
+  }, //need to override
 }));
 
 export default function RickiCard(props) {

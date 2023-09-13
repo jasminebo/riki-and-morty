@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(({ theme }) => ({
   Toolbar: {
-    backgroundColor: "black",
+    backgroundColor: "green",
   },
   link: {
     textDecoration: "none",
   },
   title: {
     cursor: "pointer",
-    color: "white",
+    color: "black",
+    fontFamily: "Trattatello, fantasy",
   },
 }));
 
