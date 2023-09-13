@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(({ theme }) => ({
-  AppBar: {
+  Toolbar: {
     backgroundColor: "black",
   },
   link: {
@@ -19,8 +19,8 @@ const useStyles = makeStyles(({ theme }) => ({
 export default function AppNavigator() {
   const classes = useStyles();
   return (
-    <AppBar className={classes.AppBar} position="fixed" variane="h6">
-      <Toolbar>
+    <AppBar position="fixed" variane="h6">
+      <Toolbar className={classes.Toolbar}>
         <Link to="/" className={classes.link}>
           <Typography className={classes.title}>Ricki & Morty</Typography>
         </Link>
