@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(({ theme }) => ({
   card: {
@@ -17,6 +18,9 @@ const useStyles = makeStyles(({ theme }) => ({
   cardContent: {
     textAlign: "center",
   },
+  link: {
+    textDecoration: "none",
+  },
 }));
 
 export default function RickiCard(props) {
@@ -24,13 +28,15 @@ export default function RickiCard(props) {
   const { character, image } = props;
   const { id, name } = character;
   return (
-    <Grid item xs={12} sm={2}>
-      <Card className={classes.card}>
-        <CardMedia image={image} className={classes.cardMedia}></CardMedia>
-        <CardContent className={classes.cardContent}>
-          <Typography>{name}</Typography>
-        </CardContent>
-      </Card>
+    <Grid item xs={12} sm={2} key={id}>
+      <Link to={"/character/" + id} className={classes.Link}>
+        <Card className={classes.card}>
+          <CardMedia image={image} className={classes.cardMedia}></CardMedia>
+          <CardContent className={classes.cardContent}>
+            <Typography>{name}</Typography>
+          </CardContent>
+        </Card>
+      </Link>
     </Grid>
   );
 }
